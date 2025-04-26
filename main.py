@@ -35,10 +35,7 @@ while len(correct_guesses_list) < 50:
         screen.bye()
         # Generating the report CSV file
         # Finding the missing states
-        missing_states_list = []
-        for state in states_list:
-            if state not in correct_guesses_list:
-                missing_states_list.append(state)
+        missing_states_list = [state for state in states_list if state not in correct_guesses_list]
 
         # Creating a new pandas dataframe
         report_data = pandas.DataFrame(missing_states_list)
